@@ -12,3 +12,4 @@ plugins {
 
 rootProject.name = "ollama-kt"
 include("lib")
+include("examples")
