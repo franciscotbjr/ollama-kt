@@ -34,3 +34,6 @@ lib/bin
 
 spec/
 /DEV_NOTES.md
+
+# EXCEÇÃO: Do not ignore gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.jar
