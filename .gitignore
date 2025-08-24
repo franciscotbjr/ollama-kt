@@ -33,3 +33,4 @@ build
 lib/bin
 
 spec/
+/DEV_NOTES.md
