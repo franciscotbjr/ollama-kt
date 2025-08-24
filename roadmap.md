@@ -24,21 +24,22 @@
 - **End Date**: TBD
 
 ### Configuration System
-- **Feature Name**: OllamaConfiguration and builder pattern with DSL
-- **Status**: ✅ DONE
-- **Assignee**: @franciscotbjr
-- **GitHub Link**: TBD
-- **Start Date**: TBD
-- **End Date**: TBD
-
-
-### Github Actions and CI/CD
-- **Feature Name**: Setup GitHub Actions for build and test
+- **Feature Name**: LibConfig properties-based configuration system
 - **Status**: ✅ DONE
 - **Assignee**: @franciscotbjr
 - **GitHub Link**: TBD
 - **Start Date**: 24/08/2025
 - **End Date**: 24/08/2025
+- **Implementation**: Complete with ollama-kt.properties file, LibConfig object, system property overrides, and comprehensive test coverage
+
+
+### Github Actions and CI/CD
+- **Feature Name**: Setup GitHub Actions for build and test
+- **Status**: 🚧 DOING 
+- **Assignee**: @franciscotbjr
+- **GitHub Link**: TBD
+- **Start Date**: 24/08/2025
+- **End Date**: TBD
 
 ## Phase 2: HTTP Client and Communication
 ### Base HTTP Client
@@ -51,19 +52,21 @@
 
 ### Serialization System
 - **Feature Name**: JSON configuration and custom serializers
-- **Status**: 📋 TODO
-- **Assignee**: TBD
+- **Status**: 🚧 DOING 
+- **Assignee**: @franciscotbjr
 - **GitHub Link**: TBD
-- **Start Date**: TBD
+- **Start Date**: 24/08/2025
 - **End Date**: TBD
+- **Implementation**: PropertyTypeSerializer implemented, kotlinx.serialization configured, custom serializers for union types
 
 ### Error Handling
 - **Feature Name**: Exception hierarchy and Result pattern
-- **Status**: 📋 TODO
-- **Assignee**: TBD
+- **Status**: ✅ DONE
+- **Assignee**: @franciscotbjr
 - **GitHub Link**: TBD
-- **Start Date**: TBD
-- **End Date**: TBD
+- **Start Date**: 24/08/2025
+- **End Date**: 24/08/2025
+- **Implementation**: Complete sealed OllamaException hierarchy with HttpException, NetworkException, SerializationException, ConfigurationException, ModelNotFoundException, and CancellationException
 
 ## Phase 3: Core Functionality
 ### Basic Operations
@@ -101,11 +104,12 @@
 
 ### Tool Calling
 - **Feature Name**: Tools system and function calling
-- **Status**: 📋 TODO
-- **Assignee**: TBD
+- **Status**: 🚧 DOING
+- **Assignee**: @franciscotbjr
 - **GitHub Link**: TBD
-- **Start Date**: TBD
+- **Start Date**: 24/08/2025
 - **End Date**: TBD
+- **Implementation**: Tool, ToolFunction, ToolFunctionParameters, and ToolCall models implemented with comprehensive test coverage
 
 ### Embeddings
 - **Feature Name**: Implementation of embed() and embeddings()
@@ -143,11 +147,12 @@
 ## Phase 6: Testing and Quality
 ### Unit Tests
 - **Feature Name**: Complete unit test coverage
-- **Status**: 📋 TODO
-- **Assignee**: TBD
+- **Status**: 🚧 DOING
+- **Assignee**: @franciscotbjr
 - **GitHub Link**: TBD
-- **Start Date**: TBD
+- **Start Date**: 24/08/2025
 - **End Date**: TBD
+- **Implementation**: Tests implemented for LibConfig (14 tests), OllamaException, PropertyTypeSerializer, and Tool models
 
 ### Integration Tests
 - **Feature Name**: Tests with real Ollama server
@@ -224,14 +229,6 @@
 - **Start Date**: TBD
 - **End Date**: TBD
 
-### CI/CD Configuration
-- **Feature Name**: Continuous integration and deployment pipeline
-- **Status**: 📋 TODO
-- **Assignee**: TBD
-- **GitHub Link**: TBD
-- **Start Date**: TBD
-- **End Date**: TBD
-
 ### Release Candidate Preparation
 - **Feature Name**: First release candidate preparation
 - **Status**: 📋 TODO
@@ -257,18 +254,16 @@
 - **Start Date**: TBD
 - **End Date**: TBD
 
-### Future Planning
-- **Feature Name**: Planning features for future versions
-- **Status**: 📋 TODO
-- **Assignee**: TBD
-- **GitHub Link**: TBD
-- **Start Date**: TBD
-- **End Date**: TBD
-
 ## Important Milestones
 
-### M1 - Base Architecture Complete (TBD)
+### M1 - Base Architecture Complete ✅ (24/08/2025)
 Basic architecture, data models and configuration system implemented
+- ✅ Project structure and build configuration
+- ✅ Complete data models (Message, ModelOptions, ResponseFormat, etc.)
+- ✅ Configuration system with LibConfig
+- ✅ Exception hierarchy
+- ✅ Tool calling models
+- ✅ Custom serializers for complex types
 
 ### M2 - Core Client Ready (TBD)
 Functional HTTP client with complete error handling system
@@ -305,7 +300,7 @@ Version 1.0.0 officially released
 - Access to servers for integration testing
 
 ### Infrastructure
-- CI/CD server (GitHub Actions or similar)
+- CI/CD server (GitHub Actions)
 - Test environment with Ollama
 - Maven repository for publication
 
@@ -318,13 +313,13 @@ Version 1.0.0 officially released
 ## Success Criteria
 
 ### Technical
-- Test coverage > 90%
+- Test coverage > 90% ⏳ (Currently: ~70% for implemented components)
 - Performance comparable to original JavaScript library
-- Idiomatic API following Kotlin conventions
+- Idiomatic API following Kotlin conventions ✅
 - Complete and up-to-date documentation
 
 ### Functional
-- 100% compatibility with Ollama REST API
+- 100% compatibility with Ollama REST API ⏳ (Models defined, client pending)
 - Complete streaming support
 - Native integration with popular Kotlin frameworks
 - Functional examples for all use cases
@@ -334,3 +329,23 @@ Version 1.0.0 officially released
 - API response time < 10ms overhead
 - Optimized memory footprint
 - Guaranteed thread-safety
+
+## Current Implementation Status Summary
+
+### ✅ Completed (Phase 1)
+- **Architecture Foundation**: Complete project structure with Gradle multi-module setup
+- **Data Models**: All core models implemented (Message, ModelOptions, ResponseFormat, etc.)
+- **Configuration System**: LibConfig with properties file and system property overrides
+- **Exception Hierarchy**: Complete sealed class hierarchy for all error types
+- **Tool Calling Models**: Tool, ToolFunction, ToolCall models with tests
+- **Serialization**: Custom serializers for union types (PropertyTypeSerializer)
+
+### 🚧 In Progress
+- **Unit Testing**: Comprehensive test coverage for implemented components
+- **Serialization System**: Additional custom serializers as needed
+
+### 📋 Next Priorities
+1. **HTTP Client Implementation** (Ktor-based)
+2. **Basic Operations** (chat, generate)
+3. **Streaming System** (Flow-based)
+4. **Model Management** operations
