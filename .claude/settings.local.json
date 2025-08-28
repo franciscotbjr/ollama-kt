@@ -6,7 +6,11 @@
       "Bash(mkdir:*)",
       "Bash(md examples)",
       "Bash(powershell:*)",
-      "Bash(.gradlew.bat test:*)"
+      "Bash(.gradlew.bat test:*)",
+      "Bash(../gradlew run:*)",
+      "Bash(java:*)",
+      "Bash(move GenerateExample.kt org/ollamakt/examples/generate/GenerateExample.kt)",
+      "Bash(kotlinc:*)"
     ],
     "deny": [],
     "ask": []

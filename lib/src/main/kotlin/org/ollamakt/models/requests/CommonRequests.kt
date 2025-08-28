@@ -9,7 +9,8 @@ import kotlinx.serialization.json.JsonElement
 @Serializable
 data class PullRequest(
     val model: String,
-    val insecure: Boolean = false
+    val insecure: Boolean = false,
+    val stream: Boolean = false
 )
 
 /**
@@ -18,7 +19,8 @@ data class PullRequest(
 @Serializable
 data class PushRequest(
     val model: String,
-    val insecure: Boolean = false
+    val insecure: Boolean = false,
+    val stream: Boolean = false
 )
 
 /**
@@ -32,7 +34,8 @@ data class CreateRequest(
     val system: String? = null,
     val adapter: String? = null,
     val license: String? = null,
-    val template: String? = null
+    val template: String? = null,
+    val stream: Boolean = false
 )
 
 /**

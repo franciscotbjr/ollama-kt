@@ -10,7 +10,7 @@ import kotlin.time.Duration
 @Serializable
 data class GenerateResponse(
     val model: String,
-    val createdAt: Instant,
+    val createdAt: Instant? = null,
     val response: String,
     val done: Boolean,
     val context: List<Int>? = null,

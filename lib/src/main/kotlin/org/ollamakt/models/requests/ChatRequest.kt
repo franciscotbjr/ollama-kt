@@ -15,6 +15,6 @@ data class ChatRequest(
     val format: ResponseFormat? = null,
     val keepAlive: Duration? = null,
     val tools: List<Tool>? = null,
-    val think: ThinkingLevel? = null,
+    val think: Boolean? = null,
     val options: ModelOptions? = null
 )

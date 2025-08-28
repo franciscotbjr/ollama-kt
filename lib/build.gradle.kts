@@ -28,6 +28,7 @@ dependencies {
     implementation("io.ktor:ktor-client-core:${ktorVersion}")
     implementation("io.ktor:ktor-client-cio:${ktorVersion}")
     implementation("io.ktor:ktor-client-content-negotiation:${ktorVersion}")
+    implementation("io.ktor:ktor-client-logging:${ktorVersion}")
     implementation("io.ktor:ktor-serialization-kotlinx-json:${ktorVersion}")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutineVersion}")
@@ -36,6 +37,8 @@ dependencies {
 
     // Use JUnit Jupiter for testing.
     testImplementation(libs.junit.jupiter)
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:${coroutineVersion}")
+    testImplementation("io.ktor:ktor-client-mock:${ktorVersion}")
 
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 

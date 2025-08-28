@@ -11,7 +11,7 @@ import kotlin.time.Duration
 @Serializable
 data class ChatResponse(
     val model: String,
-    val createdAt: Instant,
+    val createdAt: Instant? = null,
     val message: Message,
     val done: Boolean,
     val doneReason: String? = null,

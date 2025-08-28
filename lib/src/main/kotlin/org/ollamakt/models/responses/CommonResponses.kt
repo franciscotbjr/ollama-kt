@@ -19,7 +19,7 @@ data class ModelInfo(
     val name: String,
     val size: Long,
     val digest: String,
-    val modifiedAt: Instant,
+    val modifiedAt: Instant? = null,
     val details: ModelDetails? = null
 )
 
@@ -75,4 +75,65 @@ data class ShowResponse(
 @Serializable
 data class EmbedResponse(
     val embedding: List<Double>
+)
+
+/**
+ * Response for create model operations.
+ */
+@Serializable
+data class CreateResponse(
+    val status: String
+)
+
+/**
+ * Response for delete model operations.
+ */
+@Serializable
+data class DeleteResponse(
+    val success: Boolean = true
+)
+
+/**
+ * Response for copy model operations.
+ */
+@Serializable
+data class CopyResponse(
+    val success: Boolean = true
+)
+
+/**
+ * Response for pull model operations.
+ */
+@Serializable
+data class PullResponse(
+    val status: String
+)
+
+/**
+ * Response for push model operations.
+ */
+@Serializable
+data class PushResponse(
+    val status: String
+)
+
+/**
+ * Response for process listing.
+ */
+@Serializable
+data class ProcessListResponse(
+    val models: List<ProcessInfo>
+)
+
+/**
+ * Information about a running process.
+ */
+@Serializable
+data class ProcessInfo(
+    val name: String,
+    val size: Long,
+    val digest: String,
+    val details: ModelDetails? = null,
+    val expiresAt: Instant? = null,
+    val sizeVram: Long? = null
 )
