@@ -1,4 +1,4 @@
-package org.ollamakt.examples
+package org.ollamakt.examples.httpclient
 
 import kotlinx.coroutines.runBlocking
 import org.ollamakt.client.OllamaClient

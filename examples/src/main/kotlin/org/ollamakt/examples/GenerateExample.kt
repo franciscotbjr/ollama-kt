@@ -20,12 +20,12 @@ fun main() = runBlocking {
         println("Model: ${response.model}")
         println("Generated text: ${response.response}")
         println("Done: ${response.done}")
-        response.context?.let { context ->
-            if (context.isNotEmpty()) {
-                println("Context length: ${context.size}")
-            }
-        }
-        
+//        response.context?.let { context ->
+//            if (context.isNotEmpty()) {
+//                println("Context length: ${context.size}")
+//            }
+//        }
+
     } catch (e: Exception) {
         println("Error: ${e.message}")
     } finally {

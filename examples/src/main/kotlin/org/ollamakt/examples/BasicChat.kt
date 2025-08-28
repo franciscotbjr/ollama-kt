@@ -1,4 +1,4 @@
-package org.ollamakt.examples
+package org.ollamakt.examples.basicchat
 
 import org.ollamakt.models.domain.*
 import org.ollamakt.models.requests.ChatRequest
