@@ -1,4 +1,4 @@
-package org.ollamakt.examples.generate
+package org.ollamakt.examples
 
 import kotlinx.coroutines.runBlocking
 import org.ollamakt.client.OllamaClient
@@ -20,11 +20,12 @@ fun main() = runBlocking {
         println("Model: ${response.model}")
         println("Generated text: ${response.response}")
         println("Done: ${response.done}")
-//        response.context?.let { context ->
-//            if (context.isNotEmpty()) {
-//                println("Context length: ${context.size}")
-//            }
-//        }
+        
+        // Safe approach to avoid compiler bug - store in local variable for smart cast
+        val context = response.context
+        if (context != null && context.isNotEmpty()) {
+            println("Context length: ${context.size}")
+        }
 
     } catch (e: Exception) {
         println("Error: ${e.message}")

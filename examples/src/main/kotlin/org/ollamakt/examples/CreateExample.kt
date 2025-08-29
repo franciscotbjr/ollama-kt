@@ -1,4 +1,4 @@
-package org.ollamakt.examples.create
+package org.ollamakt.examples
 
 import kotlinx.coroutines.runBlocking
 import org.ollamakt.client.OllamaClient
@@ -38,7 +38,8 @@ fun main() = runBlocking {
                 val createdModel = listResponse.models.find { it.name.startsWith("my-assistant") }
                 println("Created model details:")
                 println("  Name: ${createdModel?.name}")
-                println("  Size: ${createdModel?.size?.let { "${it / (1024 * 1024)} MB" } ?: "Unknown"}")
+                val modelSize = createdModel?.size
+                println("  Size: ${if (modelSize != null) "${modelSize / (1024 * 1024)} MB" else "Unknown"}")
                 println("  Family: ${createdModel?.details?.family}")
                 
                 // Test the created model with a user request

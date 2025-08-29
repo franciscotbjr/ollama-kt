@@ -1,4 +1,4 @@
-package org.ollamakt.examples.ps
+package org.ollamakt.examples
 
 import kotlinx.coroutines.runBlocking
 import org.ollamakt.client.OllamaClient
@@ -19,11 +19,13 @@ fun main() = runBlocking {
             response.models.forEach { process ->
                 println("- ${process.name}")
                 println("  Size: ${process.size / (1024 * 1024)} MB")
-                process.sizeVram?.let { vram ->
-                    println("  VRAM: ${vram / (1024 * 1024)} MB")
+                val sizeVram = process.sizeVram
+                if (sizeVram != null) {
+                    println("  VRAM: ${sizeVram / (1024 * 1024)} MB")
                 }
-                process.expiresAt?.let { expires ->
-                    println("  Expires at: $expires")
+                val expiresAt = process.expiresAt
+                if (expiresAt != null) {
+                    println("  Expires at: $expiresAt")
                 }
                 println()
             }

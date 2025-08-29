@@ -1,4 +1,4 @@
-package org.ollamakt.examples.delete
+package org.ollamakt.examples
 
 import kotlinx.coroutines.runBlocking
 import org.ollamakt.client.OllamaClient

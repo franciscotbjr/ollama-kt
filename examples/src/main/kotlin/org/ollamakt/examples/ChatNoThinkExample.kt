@@ -1,4 +1,4 @@
-package org.ollamakt.examples.chatnothink
+package org.ollamakt.examples
 
 import kotlinx.coroutines.runBlocking
 import org.ollamakt.client.OllamaClient

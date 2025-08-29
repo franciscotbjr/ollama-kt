@@ -1,4 +1,4 @@
-package org.ollamakt.examples.list
+package org.ollamakt.examples
 
 import kotlinx.coroutines.runBlocking
 import org.ollamakt.client.OllamaClient
@@ -16,10 +16,12 @@ fun main() = runBlocking {
         response.models.forEach { model ->
             println("- ${model.name}")
             println("  Size: ${model.size / (1024 * 1024)} MB")
-            model.modifiedAt?.let { modified ->
-                println("  Modified: $modified")
+            val modifiedAt = model.modifiedAt
+            if (modifiedAt != null) {
+                println("  Modified: $modifiedAt")
             }
-            model.details?.let { details ->
+            val details = model.details
+            if (details != null) {
                 println("  Format: ${details.format}")
                 println("  Family: ${details.family}")
             }

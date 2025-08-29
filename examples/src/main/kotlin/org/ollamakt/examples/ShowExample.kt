@@ -1,4 +1,4 @@
-package org.ollamakt.examples.show
+package org.ollamakt.examples
 
 import kotlinx.coroutines.runBlocking
 import org.ollamakt.client.OllamaClient
@@ -20,7 +20,8 @@ fun main() = runBlocking {
         println("System: ${response.system}")
         println("Template: ${response.template}")
         
-        response.details?.let { details ->
+        val details = response.details
+        if (details != null) {
             println("\nModel Details:")
             println("Format: ${details.format}")
             println("Family: ${details.family}")
@@ -28,7 +29,8 @@ fun main() = runBlocking {
             println("Quantization: ${details.quantizationLevel}")
         }
         
-        response.modelfile?.let { modelfile ->
+        val modelfile = response.modelfile
+        if (modelfile != null) {
             println("\nModelfile (first 200 chars):")
             println(modelfile.take(200) + if (modelfile.length > 200) "..." else "")
         }
