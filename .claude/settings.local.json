@@ -10,7 +10,10 @@
       "Bash(../gradlew run:*)",
       "Bash(java:*)",
       "Bash(move GenerateExample.kt org/ollamakt/examples/generate/GenerateExample.kt)",
-      "Bash(kotlinc:*)"
+      "Bash(kotlinc:*)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:johnwlittle.com)"
     ],
     "deny": [],
     "ask": []
